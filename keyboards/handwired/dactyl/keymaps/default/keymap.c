@@ -174,4 +174,29 @@ void matrix_init_user(void) {
 
 
 // Runs constantly in the background, in a loop.
-void matrix_scan_user(void) {};
+void matrix_scan_user(void) {
+  static bool has_ran_yet;
+  if (!has_ran_yet) {
+    has_ran_yet = true;
+        rgblight_setrgb (16, 0, 16);
+  }
+};
+
+uint32_t layer_state_set_user(uint32_t state) {
+    switch (biton32(state)) {
+    case _TAPLAND:
+        rgblight_setrgb(0, 16, 0); //green
+        break;
+    case _LEDCNTL:
+        rgblight_setrgb(0, 0, 16); //blue
+        break;
+    case _EMOJI:
+        rgblight_setrgb (16, 0, 16); //purple
+        break;
+
+    default: //  for any other layers, or the default layer
+        rgblight_setrgb (16, 0, 16); //purple
+        break;
+    }
+  return state;
+}

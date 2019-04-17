@@ -13,3 +13,7 @@ const keypos_t hand_swap_config[MATRIX_ROWS][MATRIX_COLS] = {
     {{5,11}, {5,15}, {5,9},  {5,8},  {5,7},  {5,6},     {5,5},  {5,4},  {5,3},  {5,2},  {5,1},  {5,0}},
 };
 #endif
+
+void rgb_matrix_indicators_kb(void) {
+    rgb_matrix_set_color(index, red, green, blue);
+}

@@ -26,9 +26,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x1308
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Adereth
-#define PRODUCT         Dactyl
-#define DESCRIPTION     An ortholinear, split, 3D-curved keyboard with thumb clusters.
+#define MANUFACTURER    ThisWholeDev
+#define PRODUCT         Dactyl-Manuform
+#define DESCRIPTION     ThisWholeDevs build of the dactyl manuform 5x6 keyboard
 
 #define DIODE_DIRECTION ROW2COL
 #define MATRIX_ROWS 6
@@ -50,6 +50,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM    200
 #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
+
+#define RGB_DI_PIN D4
+#define RGBLED_NUM 10
+#define RGBLED_SPLIT { 5, 5 }
 
 /* key combination for command */
 #define IS_COMMAND() ( \
